@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ recipe.name }}
+{% endblock %}
+
+{% block content %}
+<main class="py-5">
+    <div class="d-flex justify-content-center">
+        <div style="width: 100%; max-width: 800px;">
+            <div class="card shadow">
+                {% if recipe.image %}
+                    <img src="{{ recipe.image.url }}" class="card-img-top img-fluid" alt="{{ recipe.name }}" style="height: 400px; object-fit: cover;">
+                {% else %}
+                    <div class="card-img-top text-center text-muted py-5" style="height: 400px;">
+                        No Image Available
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <h1 class="card-title text-center text-primary mb-4">{{ recipe.name }}</h1>
+                    <p class="card-text">{{ recipe.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

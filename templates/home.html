@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Recipe Book{% endblock %}
+
+{% block content %}
+<style>
+    .hero {
+        background: linear-gradient(135deg, #df5c0b, #2575fc);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        border-radius: 15px;
+    }
+    .btn-custom {
+        background: #bc5eff;
+        color: white;
+        border: none;
+    }
+    .btn-custom:hover {
+        background: darkgreen;
+    }
+</style>
+
+<div class="container">
+    <div class="hero">
+        <h1>Welcome to My Recipe Book</h1>
+        <p class="lead">Create, customize, and manage your favorite recipes!</p>
+        <a href="{% url 'add' %}" class="btn btn-custom btn-lg me-2">Add Recipe</a>
+        <a href="{% url 'show' %}" class="btn btn-light btn-lg">View Recipes</a>
+    </div>
+</div>
+
+{% endblock %}
